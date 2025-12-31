@@ -17,7 +17,6 @@ const products = [
         gender: "men",
         price: 89.99,
         description: "Sleek titanium band with brushed finish. Durable and stylish for everyday wear.",
-        image: "https://placehold.co/600x600/e2e8f0/1e293b?text=Titanium+Ring"
     },
     {
         id: 3,
@@ -64,7 +63,7 @@ const products = [
         gender: "unisex",
         price: 79.99,
         description: "Minimalist sterling silver chain. Perfect for layering or wearing solo.",
-        image: "https://placehold.co/600x600/e2e8f0/1e293b?text=Silver+Chain"
+        image: "https://loremflickr.com/500/500/silver,necklace?lock=7"
     },
     {
         id: 8,
@@ -111,7 +110,7 @@ const products = [
         gender: "unisex",
         price: 39.99,
         description: "Natural stone beaded bracelet. Bohemian style meets modern design.",
-        image: "https://placehold.co/600x600/e2e8f0/1e293b?text=Beaded+Bracelet"
+        image: "https://loremflickr.com/500/500/beads,bracelet?lock=12"
     },
 
     // Perfumes
@@ -140,7 +139,7 @@ const products = [
         gender: "unisex",
         price: 79.99,
         description: "Fresh aquatic fragrance with citrus and marine notes. Perfect for daily wear.",
-        image: "https://placehold.co/600x600/e2e8f0/1e293b?text=Ocean+Breeze"
+        image: "https://loremflickr.com/500/500/perfume,blue?lock=15"
     },
     {
         id: 16,
@@ -149,7 +148,7 @@ const products = [
         gender: "men",
         price: 149.99,
         description: "Luxurious oriental fragrance with oud, saffron, and leather. Bold and mysterious.",
-        image: "https://placehold.co/600x600/e2e8f0/1e293b?text=Midnight+Oud"
+        image: "https://loremflickr.com/500/500/perfume,dark?lock=16"
     },
 
     // Watches
@@ -216,7 +215,7 @@ const products = [
         gender: "unisex",
         price: 59.99,
         description: "Modern slim wallet with RFID protection. Security meets style.",
-        image: "https://placehold.co/600x600/e2e8f0/1e293b?text=RFID+Wallet"
+        image: "https://loremflickr.com/500/500/wallet,leather?lock=23"
     },
     {
         id: 24,
@@ -225,7 +224,7 @@ const products = [
         gender: "unisex",
         price: 39.99,
         description: "Minimalist leather card holder. Perfect for essentials only.",
-        image: "https://placehold.co/600x600/e2e8f0/1e293b?text=Card+Holder"
+        image: "https://loremflickr.com/500/500/men,wallet?lock=24"
     },
 
     // Belts
@@ -236,7 +235,7 @@ const products = [
         gender: "men",
         price: 69.99,
         description: "Classic Italian leather belt with silver buckle. Professional elegance.",
-        image: "https://placehold.co/600x600/e2e8f0/1e293b?text=Leather+Belt"
+        image: "https://loremflickr.com/500/500/belt,leather?lock=25"
     },
     {
         id: 26,
@@ -245,7 +244,7 @@ const products = [
         gender: "women",
         price: 99.99,
         description: "Luxury leather belt with signature gold buckle. Fashion statement piece.",
-        image: "https://placehold.co/600x600/e2e8f0/1e293b?text=Designer+Belt"
+        image: "https://loremflickr.com/500/500/fashion,belt?lock=26"
     },
     {
         id: 27,
@@ -254,7 +253,7 @@ const products = [
         gender: "unisex",
         price: 29.99,
         description: "Casual canvas belt with metal buckle. Comfortable everyday wear.",
-        image: "https://placehold.co/600x600/e2e8f0/1e293b?text=Canvas+Belt"
+        image: "https://loremflickr.com/500/500/fabric,belt?lock=27"
     },
     {
         id: 28,
@@ -263,7 +262,7 @@ const products = [
         gender: "men",
         price: 89.99,
         description: "Versatile reversible leather belt. Two styles in one.",
-        image: "https://placehold.co/600x600/e2e8f0/1e293b?text=Reversible+Belt"
+        image: "https://loremflickr.com/500/500/mens,belt?lock=29"
     }
 ];
 
