@@ -17,6 +17,7 @@ const products = [
         gender: "men",
         price: 89.99,
         description: "Sleek titanium band with brushed finish. Durable and stylish for everyday wear.",
+        image: "https://loremflickr.com/500/500/silver,ring?lock=2"
     },
     {
         id: 3,
@@ -34,7 +35,7 @@ const products = [
         gender: "men",
         price: 149.99,
         description: "Classic gold signet ring with customizable engraving. Timeless masculine elegance.",
-        image: "https://placehold.co/600x600/e2e8f0/1e293b?text=Signet+Ring"
+        image: "https://loremflickr.com/500/500/gold,ring?lock=4"
     },
 
     // Chains
