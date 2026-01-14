@@ -142,13 +142,14 @@ function checkout() {
         return;
     }
 
-    // Simulate checkout process
+    // Save promo status for checkout page
+    localStorage.setItem('luxestyle_promo_applied', promoApplied.toString());
+
+    // Redirect to checkout page
     showToast('Redirecting to checkout...', 'success');
     setTimeout(() => {
-        alert('Thank you for your order! This is a demo, so no actual payment will be processed.');
-        clearCart();
-        loadCartItems();
-    }, 1500);
+        window.location.href = 'checkout.html';
+    }, 500);
 }
 
 // Initialize page
