@@ -176,6 +176,17 @@ function setupFormHandlers() {
 function handleCheckoutSubmit(e) {
     e.preventDefault();
 
+    // Check if user is logged in
+    const currentUser = getCurrentUser();
+    if (!currentUser) {
+        showToast('Please login to place an order.', 'error');
+        setTimeout(() => {
+            // Store current cart to preserve it
+            window.location.href = 'login.html?redirect=checkout';
+        }, 1500);
+        return;
+    }
+
     // Validate form
     if (!validateCheckoutForm()) {
         return;
@@ -187,11 +198,11 @@ function handleCheckoutSubmit(e) {
     // Create order
     const order = createOrder(formData);
 
-    // Save order to user account if logged in
-    const currentUser = getCurrentUser();
-    if (currentUser) {
-        saveOrderToUser(order);
-    }
+    // Save order to user account
+    saveOrderToUser(order);
+
+    // Store order data for success page
+    localStorage.setItem('luxestyle_last_order', JSON.stringify(order));
 
     // Clear cart
     clearCart();
@@ -199,19 +210,8 @@ function handleCheckoutSubmit(e) {
     // Clear promo status
     localStorage.removeItem('luxestyle_promo_applied');
 
-    // Show success message
-    showToast('Order placed successfully!', 'success');
-
-    // Redirect to orders page or confirmation
-    setTimeout(() => {
-        if (currentUser) {
-            window.location.href = 'orders.html';
-        } else {
-            // For guest users, show confirmation and redirect to home
-            alert(`Thank you for your order!\n\nOrder ID: ${order.orderId}\n\nTotal: $${order.total.toFixed(2)}\n\nCreate an account to track your orders.`);
-            window.location.href = 'index.html';
-        }
-    }, 1500);
+    // Redirect to order success page
+    window.location.href = 'order-success.html';
 }
 
 // Validate checkout form

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Successful - LuxeStyle</title>
+    <meta name="description" content="Your order has been placed successfully!">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top glass-navbar" id="mainNavbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="bi bi-gem"></i> LuxeStyle
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cart.html">
+                            <i class="bi bi-cart3"></i> Cart
+                            <span class="badge bg-danger" id="cartCount">0</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin.html">Admin</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">
+                            <i class="bi bi-person-circle"></i> Login
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Success Section -->
+    <section class="order-success-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="success-card">
+                        <!-- Success Icon -->
+                        <div class="success-icon-wrapper">
+                            <div class="success-icon">
+                                <i class="bi bi-check-circle-fill"></i>
+                            </div>
+                        </div>
+
+                        <!-- Success Message -->
+                        <h1 class="success-title">Order Placed Successfully!</h1>
+                        <p class="success-subtitle">Thank you for your purchase. Your order has been confirmed.</p>
+
+                        <!-- Order Details -->
+                        <div class="order-details-card">
+                            <div class="order-header">
+                                <h4><i class="bi bi-receipt me-2"></i>Order Details</h4>
+                            </div>
+                            <div class="order-body">
+                                <div class="row mb-3">
+                                    <div class="col-6">
+                                        <p class="detail-label">Order ID</p>
+                                        <p class="detail-value" id="orderId">-</p>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="detail-label">Order Date</p>
+                                        <p class="detail-value" id="orderDate">-</p>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col-6">
+                                        <p class="detail-label">Status</p>
+                                        <p class="detail-value">
+                                            <span class="badge bg-warning text-dark">
+                                                <i class="bi bi-clock-history me-1"></i>Processing
+                                            </span>
+                                        </p>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="detail-label">Total Amount</p>
+                                        <p class="detail-value text-primary fw-bold fs-5" id="orderTotal">$0.00</p>
+                                    </div>
+                                </div>
+
+                                <hr class="my-4">
+
+                                <!-- Order Items -->
+                                <h5 class="mb-3">Items Ordered</h5>
+                                <div id="orderItemsList" class="order-items-list">
+                                    <!-- Items will be loaded dynamically -->
+                                </div>
+
+                                <hr class="my-4">
+
+                                <!-- Shipping Address -->
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h5 class="mb-3"><i class="bi bi-truck me-2"></i>Shipping Address</h5>
+                                        <div id="shippingAddress" class="address-box">
+                                            <!-- Address will be loaded dynamically -->
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h5 class="mb-3"><i class="bi bi-envelope me-2"></i>Contact Information</h5>
+                                        <div id="contactInfo" class="address-box">
+                                            <!-- Contact will be loaded dynamically -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <hr class="my-4">
+
+                                <!-- Order Summary -->
+                                <div class="order-summary">
+                                    <div class="d-flex justify-content-between mb-2">
+                                        <span>Subtotal</span>
+                                        <span id="summarySubtotal">$0.00</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between mb-2">
+                                        <span>Shipping</span>
+                                        <span id="summaryShipping">$0.00</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between mb-2">
+                                        <span>Tax</span>
+                                        <span id="summaryTax">$0.00</span>
+                                    </div>
+                                    <div id="promoDiscountSection" style="display: none;">
+                                        <div class="d-flex justify-content-between mb-2 text-success">
+                                            <span>Promo Discount</span>
+                                            <span id="summaryDiscount">-$0.00</span>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="d-flex justify-content-between">
+                                        <strong class="fs-5">Total</strong>
+                                        <strong class="text-primary fs-5" id="summaryTotal">$0.00</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="action-buttons">
+                            <a href="orders.html" class="btn btn-primary btn-lg">
+                                <i class="bi bi-list-ul me-2"></i>View All Orders
+                            </a>
+                            <a href="products.html" class="btn btn-outline-secondary btn-lg">
+                                <i class="bi bi-arrow-left me-2"></i>Continue Shopping
+                            </a>
+                        </div>
+
+                        <!-- Additional Info -->
+                        <div class="alert alert-info mt-4">
+                            <i class="bi bi-info-circle me-2"></i>
+                            <strong>What's Next?</strong> You will receive an email confirmation shortly.
+                            We'll notify you when your order ships.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-white pt-5 pb-3">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h5 class="mb-3"><i class="bi bi-gem"></i> LuxeStyle</h5>
+                    <p>Your destination for premium fashion accessories. Elevate your style with our curated collection.
+                    </p>
+                    <div class="social-links mt-3">
+                        <a href="#" class="text-white me-3"><i class="bi bi-facebook fs-5"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-instagram fs-5"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-twitter fs-5"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-pinterest fs-5"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <h5 class="mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white-50">Home</a></li>
+                        <li><a href="products.html" class="text-white-50">Products</a></li>
+                        <li><a href="cart.html" class="text-white-50">Cart</a></li>
+                        <li><a href="admin.html" class="text-white-50">Admin</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5 class="mb-3">Customer Service</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white-50">Contact Us</a></li>
+                        <li><a href="#" class="text-white-50">Shipping Info</a></li>
+                        <li><a href="#" class="text-white-50">Returns</a></li>
+                        <li><a href="#" class="text-white-50">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5 class="mb-3">Newsletter</h5>
+                    <p class="text-white-50">Subscribe for exclusive offers</p>
+                    <div class="input-group">
+                        <input type="email" class="form-control" placeholder="Your email">
+                        <button class="btn btn-primary" type="button">
+                            <i class="bi bi-send"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4 bg-white">
+            <div class="text-center text-white-50">
+                <p class="mb-0">&copy; 2024 LuxeStyle. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/order-success.js"></script>
+</body>
+
+</html>
